@@ -1,0 +1,27 @@
+<% if @item  %>
+    <% @item.errors.full_messages.each do |message|%>
+        <p><%= message %> </p>
+    <% end %>
+<% end %>
+
+<h1>Editing <%= @item.name %></h1>
+<form method="POST"  action="/items/<%= @item.id %>">
+    <input type='hidden' value='PATCH' name='_method'>
+    <div>
+        <label>Item Name</label>
+        <input type="text" value="<%= @item.name %>" placeholder="Item name" name="name"  /> 
+    </div>
+    <div>
+        <label>Item Cost</label>
+        <input type="number" value="<%= @item.cost %>" name="cost"  />
+    </div>
+    <div>
+        <label>Listing Price</label>
+        <input type="number" name="listing_price" value="<%= @item.listing_price %>"  />
+    </div>
+    <div>
+        <label>Item Condition</label>
+        <input type="text" name="condition" value="<%= @item.condition %>"  />
+    </div>
+    <input type="submit" value="Edit Item">
+</form>

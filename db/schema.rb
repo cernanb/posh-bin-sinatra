@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190312232016) do
+ActiveRecord::Schema.define(version: 20190319234710) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20190312232016) do
     t.boolean "new",           default: false
     t.string  "condition"
     t.integer "brand_id"
+  end
+
+  create_table "user_brands", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "brand_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
   end
 
 end

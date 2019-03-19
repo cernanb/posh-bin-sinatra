@@ -1,0 +1,9 @@
+ <p><%= @item.name%><p>
+ <p>$<%= @item.cost%><p>
+ <p>$<%= @item.listing_price%><p>
+ <p><%= @item.condition%><p>
+<a href="/items/<%= @item.id %>/edit">Edit</a>
+ <form method="POST" action="/items/<%= @item.id %>">
+    <input type="hidden" value="DELETE" name="_method">
+    <input type="submit" value="Delete">
+ </form>

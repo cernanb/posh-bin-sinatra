@@ -5,5 +5,6 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 #mounting the controllers
+use Rack::MethodOverride
 run ApplicationController
 use ItemsController
